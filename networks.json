@@ -1,0 +1,8 @@
+{
+  "mainnet": {
+    "generic-ens-mapper": {
+      "address": "0x64fa880b224b112d371948914e9e667e22bddc46",
+      "startBlock": 15386447
+    }
+  }
+}

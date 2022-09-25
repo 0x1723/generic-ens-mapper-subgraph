@@ -1,0 +1,7 @@
+type ClaimedSubdomain @entity {
+  id: ID!
+  timestamp: BigInt!
+  nftContract: Bytes! # address
+  tokenId: BigInt! # uint256
+  name: String! # string
+}

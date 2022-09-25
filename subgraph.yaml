@@ -1,0 +1,24 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ClaimedSubdomains
+    network: mainnet
+    source:
+      abi: GenericEnsMapper
+      address: "0x64fa880b224b112d371948914e9e667e22bddc46"
+      startBlock: 15386447
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - SubdomainClaimed
+      abis:
+        - name: GenericEnsMapper
+          file: ./abis/GenericEnsMapper.json
+      eventHandlers:
+        - event: SubdomainClaimed(indexed bytes32,indexed address,indexed uint96,string)
+          handler: handleSubdomainClaimed
+      file: ./src/GenericEnsMapper.ts
